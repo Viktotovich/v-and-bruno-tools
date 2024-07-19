@@ -45,7 +45,37 @@
                 </tr>
             </table>
         </div>
-        <div class="metrics-container"></div>
+
+        <!--SECTION 2 - Metrics-->
+        <div class="metrics-container">
+            <div class="part-one">
+                <div>Metric 1</div>
+                <div class="edit-metric edit-metric-one">Enter Value One</div>
+            </div>
+            <div class="part-two">
+                <div>Operator</div>
+                <div>
+                    <label for="operator-select">Operator:</label>
+                    <select name="operator" id="operator-select">
+                        <option value="">Please choose an option--</option>
+                        <option value="multiply">Multiply</option>
+                        <option value="divide">Divide</option>
+                        <option value="add">Add</option>
+                        <option value="subtract">Subtract</option>
+                    </select>
+                </div>
+            </div>
+            <div class="part-three">
+                <div>Metric 2</div>
+                <div class="edit-metric edit-metric-two">Enter Value 2</div>
+            </div>
+            <div>
+                <div>Result</div>
+                <div class="metric-result">0</div>
+            </div>
+            <button type="button" class="metric-button">Calculate Custom Metric</button>
+        </div>
+
         <div class="goal-container"></div>
         <div class="graph-container"></div>
         <div class="gpt-container"></div>

@@ -60,7 +60,10 @@ const taskManager = (function(){
         taskDate.textContent = task.deadline;
         taskDetails.textContent = task.details;
         taskCompletionStatus.textContent = task.status;
-        removeTask.textContent = 'X';
+        removeTask.textContent = 'x';
+
+        removeTask.setAttribute("class", "remove");
+        taskCompletionStatus.setAttribute("class", "task-status")
 
         taskContainer.appendChild(taskGroup);
         taskGroup.appendChild(taskDate);
