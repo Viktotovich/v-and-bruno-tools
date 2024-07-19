@@ -190,6 +190,8 @@ const goalTracker = (function(){
             progressDiv.style.backgroundColor = 'red';
         } else if (percentageWidth <= 66) {
             progressDiv.style.backgroundColor = 'yellow';
+        } else if (percentageWidth >= 97){
+            progressDiv.style.backgroundColor = 'gold';
         } else {
             progressDiv.style.backgroundColor = 'green';
         };
