@@ -90,6 +90,66 @@ const metricHandler = (function(){
 })();
 
 
+const premadeMetrics = (function(){
+    const premadeMetricsContainer = document.querySelector(".premade-metrics-container");
+
+    const metricLibrary = [];
+
+    class MetricSample{
+        constructor(metricOneName, operatorType, metricTwoName){
+            this.metricOneName = metricOneName;
+            this.operatorType = operatorType;
+            this.metricTwoName = metricTwoName;
+        };
+    };
+
+    //All the pre-made formats that I know off
+    const followersToSale = new MetricSample('followers', " divide by ", 'sales');
+
+    const followersPerDayAvg = new MetricSample('followers', ' divide by ', ' 7 days ');
+
+    const followersToWebsiteVisits = new MetricSample("followers", " divide by ", " visits");
+
+    const visitToSales = new MetricSample("visits", " divide by ", "sales");
+
+    const resultPerPost = new MetricSample('revenue', ' divide by ', ' posts');
+
+    metricLibrary.push(followersToSale, followersPerDayAvg, followersToWebsiteVisits, visitToSales, resultPerPost);
+
+    let currentIndex = 0;
+
+    // Function to update the displayed metric
+    function updateDisplayedMetric() {
+        const sampleMetricOne = document.querySelector('.sample-metric-one');
+        const sampleOperator = document.querySelector('.sample-operator');
+        const sampleMetricTwo = document.querySelector('.sample-metric-two');
+
+        const currentMetric = metricLibrary[currentIndex];
+
+        sampleMetricOne.textContent = currentMetric.metricOneName;
+        sampleOperator.textContent = currentMetric.operatorType;
+        sampleMetricTwo.textContent = currentMetric.metricTwoName;
+    }
+
+    // Initial display
+    updateDisplayedMetric();
+
+    // Event listeners for navigation
+    const leftArrow = document.querySelector('#left-arrow');
+    const rightArrow = document.querySelector('#right-arrow');
+
+    leftArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? metricLibrary.length - 1 : currentIndex - 1;
+        updateDisplayedMetric();
+    });
+
+    rightArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex === metricLibrary.length - 1) ? 0 : currentIndex + 1;
+        updateDisplayedMetric();
+    });
+})();
+
+
 
 
 
