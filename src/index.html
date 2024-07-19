@@ -15,5 +15,40 @@
             </ol>
         </nav>
     </header>
+    <div id="content">
+        <!--SECTION 1 - Tasks-->
+        <div class="tasks-container">
+            <table id="task-container">
+                <tr>
+                    <td>Date</td>
+                    <td>Task</td>
+                    <td>Status</td>
+                </tr>
+                <tr>
+                    <button id="open-modal">Add Task</button>
+                    <!-- Pop-up Form to set tasks-->
+                    <dialog>
+                        <button type="button" class="close-modal" autofocus>x</button>
+                        <form action="" method="">
+                            <div>
+                                <label for="deadline">Deadline:</label>
+                                <input id="deadline" type="date" name="deadline" required aria-label="required">
+                            </div>
+                            <div>
+                                <label for="details">Task Details:</label>
+                                <input id="details" type="text" name="details" required aria-label="required" placeholder="(Example) Message 3 micro-influencers">
+                            </div>
+                            <button id="submit-form">Confirm</button>
+                        </form>
+                    </dialog>
+                </tr>
+            </table>
+        </div>
+        <div class="metrics-container"></div>
+        <div class="goal-container"></div>
+        <div class="graph-container"></div>
+        <div class="gpt-container"></div>
+        <div class="target-container"></div>
+    </div>
 </body>
 </html>

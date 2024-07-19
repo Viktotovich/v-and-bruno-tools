@@ -6,6 +6,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'V and Bruno Tools',
+            template: "./src/index.html"
         }),
     ],
     output: {
@@ -13,5 +14,13 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
-    mode: "production",
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+        ],
+    },
+    mode: "development",
 }
