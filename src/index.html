@@ -85,7 +85,20 @@
             </div>
             <div id="right-arrow">&rtrif;</div>
         </div>
-        <div class="track-values"></div>
+        <div class="goal-tracker">
+            <div>Set your goal display:</div>
+            <form action="" method="">
+                <div>
+                    <label for="target">Numeric target:</label>
+                    <input id="target" type="number" name="target" required aria-label="required">
+                </div>
+                <div>
+                    <label for="current-amount">How much have you achieved so far:</label>
+                    <input id="current-amount" type="number" name="current-amount" required aria-label="required">
+                </div>
+                <button id="generate-tracker">Create Tracker</button>
+            </form>
+        </div>
         <div class="graph-container"></div>
         <div class="gpt-container"></div>
         <div class="target-container"></div>

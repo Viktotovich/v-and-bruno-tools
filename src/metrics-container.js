@@ -149,7 +149,60 @@ const premadeMetrics = (function(){
     });
 })();
 
+//goal tracker
 
+const goalTracker = (function(){
+    const generateTrackerBtn = document.querySelector("#generate-tracker");
+
+    generateTrackerBtn.addEventListener("click", generateTracker)
+
+    function generateTracker(){
+        const target = document.querySelector("#target").value;
+        const currentAmount = document.querySelector("#current-amount").value;
+        const goalTracker = document.querySelector(".goal-tracker");
+        const textElement = document.createElement("div");
+
+        goalTracker.innerHTML = '';
+        goalTracker.appendChild(textElement);
+        textElement.textContent = 'Your progress:'
+
+        //100%
+        const borderDiv = document.createElement('div');
+        //fraction of 100
+        const progressDiv = document.createElement('div');
+
+        borderDiv.style.border = '1px solid #000';
+        borderDiv.style.width = '20%';
+        borderDiv.style.height = '20px';
+        borderDiv.style.position = 'relative';
+
+        progressDiv.style.height = '100%';
+        progressDiv.style.width = '0';
+        goalTracker.appendChild(borderDiv);
+        borderDiv.appendChild(progressDiv);
+
+        let percentageWidth = calculatePercentage(target, currentAmount);
+        percentageWidth = Math.max(0, Math.min(100, percentageWidth));
+
+        progressDiv.style.width = `${percentageWidth}%`;
+
+        if (percentageWidth <= 33) {
+            progressDiv.style.backgroundColor = 'red';
+        } else if (percentageWidth <= 66) {
+            progressDiv.style.backgroundColor = 'yellow';
+        } else {
+            progressDiv.style.backgroundColor = 'green';
+        };
+    };
+
+    function calculatePercentage(target, currentAmount) {
+        if (target <= 0 || currentAmount < 0) {
+            return 0;
+        }
+        return (currentAmount / target) * 100;
+    }
+
+})()
 
 
 
