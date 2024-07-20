@@ -1,0 +1,47 @@
+body {
+    background-color: #23364A;
+    color: #66BAD0;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.tasks {
+    grid-area: 1 / 1 / 2 / 2;
+    border: 1px #4E9994 solid;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#task-container {
+    width: 100%;
+}
+
+#task-container tr {
+    transition: background-color 0.3s ease;
+}
+
+#task-container tr:hover {
+    background-color: aliceblue;
+    color: #23364A;
+}
+
+#task-headers {
+    color: orange;
+}
+
+td {
+    max-width: 20ch;
+    overflow-wrap: break-word;
+    border-left: 1px solid #4E9994;
+}
+
+tr:last-child td {
+    border-bottom: 1px solid #4E9994;
+}
