@@ -48,10 +48,9 @@
         <div class="metrics-container">
             <div class="part-one">
                 <div>Metric 1</div>
-                <div class="edit-metric edit-metric-one">Enter Value One</div>
+                <div class="edit-metric edit-metric-one">Enter Value 1</div>
             </div>
             <div class="part-two">
-                <div>Operator</div>
                 <div>
                     <label for="operator-select">Operator:</label>
                     <select name="operator" id="operator-select">
@@ -67,11 +66,13 @@
                 <div>Metric 2</div>
                 <div class="edit-metric edit-metric-two">Enter Value 2</div>
             </div>
-            <div>
-                <div>Result</div>
-                <div class="metric-result">0</div>
+            <div class="metric-flex-container">
+                <div class="metric-result-container">
+                    <div>Result: <span class="metric-result">0</span>
+                    </div>
+                </div>
+                <button class="metric-button">Calculate Custom Metric</button>
             </div>
-            <button type="button" class="metric-button">Calculate Custom Metric</button>
         </div>
 
         <!--SECTION 3 - premade Metrics-->

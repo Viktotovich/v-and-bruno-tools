@@ -7,7 +7,8 @@ body {
 #content {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 1fr 1fr;
+    gap: 30px;
 }
 
 .tasks {
@@ -130,3 +131,49 @@ textarea {
     background-color: rgb(160, 159, 159);
 }
 
+/* Section 2 - Metrics Container */
+.metrics-container {
+    border: #3b8d88 1px solid;
+    grid-area: 2 / 1 / 3 / 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 4fr 1fr;
+}
+
+.part-one {
+    grid-area: 1 / 1 / 2 / 2;
+    padding-left: 0.3rem;
+    border: #3b8d88 1px solid;
+}
+
+.part-two {
+    grid-area: 1 / 2 / 2 / 3;
+    padding-left: 0.3rem;
+    border: #3b8d88 1px solid;
+}
+
+.part-three {
+    grid-area: 1 / 3 / 2 / 4;
+    padding-right: 0.3rem;
+    border: #3b8d88 1px solid;
+}
+
+.metric-flex-container {
+    grid-area: 2 / 1 / -1 / -1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+};
+
+.metric-button {
+    border-radius: 7px;
+    background-color: #4E9994;
+    color: white;
+}
+
+.edit-metric,
+#operator-select {
+    margin: 1.5rem 0.2rem;
+    padding-top: 0.4rem;
+    border-top: #3b8d88 1px solid;
+}
