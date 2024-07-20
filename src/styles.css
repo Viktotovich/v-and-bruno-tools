@@ -187,3 +187,8 @@ textarea {
 .chart-container {
     grid-area: 1 / 2 / 3 / 3;
 }
+
+/* Section 6 - Update Chart System */
+.month-control {
+    display: flex;
+}
