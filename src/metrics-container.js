@@ -111,9 +111,11 @@ const goalTracker = (function(){
         const borderDiv = document.createElement('div');
         //fraction of 100
         const progressDiv = document.createElement('div');
+        //empty space filler
+        const motivationalText = document.createElement('div');
 
         borderDiv.style.border = '1px solid #000';
-        borderDiv.style.width = '20%';
+        borderDiv.style.width = '80%';
         borderDiv.style.height = '20px';
         borderDiv.style.position = 'relative';
 
@@ -121,6 +123,7 @@ const goalTracker = (function(){
         progressDiv.style.width = '0';
         goalTracker.appendChild(borderDiv);
         borderDiv.appendChild(progressDiv);
+        goalTracker.appendChild(motivationalText);
 
         let percentageWidth = calculatePercentage(target, currentAmount);
         percentageWidth = Math.max(0, Math.min(100, percentageWidth));
@@ -129,12 +132,16 @@ const goalTracker = (function(){
 
         if (percentageWidth <= 33) {
             progressDiv.style.backgroundColor = 'red';
+            motivationalText.textContent = "There is still a lot more work to do, but don't worry - you got this!";
         } else if (percentageWidth <= 66) {
             progressDiv.style.backgroundColor = 'yellow';
+            motivationalText.textContent = "You are closer than you know it! Keep up at it.";
         } else if (percentageWidth >= 97){
             progressDiv.style.backgroundColor = 'gold';
+            motivationalText.textContent = "YOU DID IT!!!! Congratulations!";
         } else {
             progressDiv.style.backgroundColor = 'green';
+            motivationalText.textContent = "You are very close! Give it your all!";
         };
     };
 

@@ -3,11 +3,23 @@ body {
     color: #66BAD0;
 }
 
+/* All items */
+button:hover {
+    background-color: #3b8d88;
+    cursor: pointer;
+}
+
+button:active {
+    transition: background-color 0.3s ease;
+    transform: translateY(1px);
+    background-color: rgb(160, 159, 159);
+}
+
 /* Section 1 */
 #content {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 0.5fr 1fr;
+    grid-template-rows: 1fr 0.5fr 0.5fr;
     gap: 30px;
 }
 
@@ -165,12 +177,6 @@ textarea {
     align-items: center;
 };
 
-.metric-button {
-    border-radius: 7px;
-    background-color: #4E9994;
-    color: white;
-}
-
 .edit-metric,
 #operator-select {
     margin: 1.5rem 0.2rem;
@@ -181,6 +187,36 @@ textarea {
 /* Section 4 - Goal Tracker */
 .goal-tracker {
     grid-area: 3 / 1 / 4 / 2;
+    border: #3b8d88 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.goal-tracker > div {
+    border-bottom: #3b8d88 1px solid;
+    margin: 0.7rem 0;
+}
+
+.goal-tracker > form {
+    margin: 0 1rem;
+}
+
+.goal-tracker > form div {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#generate-tracker {
+    margin-top: 2rem;
+    border: 1px solid #23364A;
+    border-radius: 7px;
+    background-color: #4E9994;
+    color: white;
+    margin-left: 20%;
+    width: 50%;
+    padding: 0.5rem 0;
 }
 
 /* Section 5 - Chart System */
@@ -188,7 +224,50 @@ textarea {
     grid-area: 1 / 2 / 3 / 3;
 }
 
+.month-control input {
+    background-color: #23364A;
+    color: #66BAD0;
+}
+
 /* Section 6 - Update Chart System */
+.update-chart-container {
+    border: #3b8d88 1px solid;
+}
+
 .month-control {
     display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
+.month-control label {
+    border-bottom: #3b8d88 1px solid;
+}
+
+#update-chart-form {
+    padding: 20px;
+}
+
+#update-chart-form > button {
+    border: 1px solid #23364A;
+    border-radius: 7px;
+    background-color: #4E9994;
+    color: white;
+    margin-top: 1rem;
+    margin-left: 20%;
+    width: 50%;
+    padding: 0.5rem 0;
+}
+
+
+
+/* From Section 2 - no idea why this rule works only at the end - even !important tags are ignored - only solution is to somehow pray for the cascade to do its thing */
+
+#metric-button {
+    border: 1px solid #23364A;
+    border-radius: 7px;
+    padding: 0.3rem 0.2rem;
+    margin: 0.6rem 0;
+    background-color: #4E9994;
+    color: white;
 }
