@@ -4,3 +4,6 @@ import './styles.css';
 import './taskmaster';
 //business logic
 import "./metrics-container";
+//ARIMA
+import './graph.js'
+
