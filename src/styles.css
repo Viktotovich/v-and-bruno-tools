@@ -3,6 +3,7 @@ body {
     color: #66BAD0;
 }
 
+/* Section 1 */
 #content {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -28,7 +29,7 @@ table {
 }
 
 #task-container tr:hover {
-    background-color: aliceblue;
+    background-color: rgb(168, 203, 233);
     color: #23364A;
 }
 
@@ -40,8 +41,92 @@ td {
     max-width: 20ch;
     overflow-wrap: break-word;
     border-left: 1px solid #4E9994;
+    border-bottom: 1px solid #4E9994;
+    padding: 2px;
 }
 
-tr:last-child td {
-    border-bottom: 1px solid #4E9994;
+.task-due:hover,
+.complete:hover,
+.ignore:hover {
+    cursor: pointer;
+    color: #23364A;
 }
+
+.task-due {
+    color: yellow;
+}
+
+.complete {
+    color: teal;
+}
+
+.ignore {
+    color: gainsboro;
+}
+
+.remove:hover {
+    cursor: pointer;
+}
+
+.remove {
+    color: rgb(252, 239, 239);
+}
+
+.remove:hover {
+    color: rgb(189, 123, 123);
+}
+
+/* Modal design - Section 1 Part 2 */
+#open-modal {
+    appearance: none;
+    border: #23364A 1px solid;
+    border-radius: 7px;
+    background-color: #4E9994;
+    color: white;
+    width: 100%;
+    margin: 4px 0;
+}
+
+dialog {
+    padding: 2.2rem 1.8rem 1.8rem 1.6rem;
+}
+
+textarea {
+    margin-top: 2rem;
+}
+
+.close-modal {
+    position: absolute;
+    appearance: none;
+    background-color: transparent;
+    color: red;
+    padding: 0.2rem;
+    right: 12px;
+    top: 3px;
+    border: 1px solid transparent;
+    font-size: 1.3rem;
+}
+
+.close-modal:hover {
+    cursor: pointer;
+}
+
+#submit-form {
+    margin-top: 0.7rem;
+    padding: 0.3rem 1.3rem;
+    border-radius: 7px;
+    margin-left: 30%;
+    background-color: #4E9994;
+    color: white;
+}
+
+#submit-form:hover {
+    background-color: #3b8d88;
+    cursor: pointer;
+}
+
+#submit-form:active {
+    transform: translateY(1px);
+    background-color: rgb(160, 159, 159);
+}
+

@@ -60,10 +60,10 @@ const taskManager = (function(){
         taskDate.textContent = task.deadline;
         taskDetails.textContent = task.details;
         taskCompletionStatus.textContent = task.status;
-        removeTask.textContent = 'x';
+        removeTask.textContent = 'Delete';
 
         removeTask.setAttribute("class", "remove");
-        taskCompletionStatus.setAttribute("class", "task-status")
+        taskCompletionStatus.setAttribute("class", "task-due")
 
         taskContainer.appendChild(taskGroup);
         taskGroup.appendChild(taskDate);
@@ -74,12 +74,15 @@ const taskManager = (function(){
         taskCompletionStatus.addEventListener("click", () => {
             if (taskCompletionStatus.textContent === "task-due"){
                 taskCompletionStatus.textContent = 'complete';
+                taskCompletionStatus.setAttribute('class', 'complete');
                 task.taskStatus('complete');
             } else if (taskCompletionStatus.textContent === 'complete') {
                 taskCompletionStatus.textContent = 'ignore';
+                taskCompletionStatus.setAttribute('class', 'ignore');
                 task.taskStatus('ignore');
             } else {
                 taskCompletionStatus.textContent = 'task-due';
+                taskCompletionStatus.setAttribute('class', 'task-due');
                 task.taskStatus('task-due');
             }
         });
