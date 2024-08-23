@@ -1,7 +1,5 @@
 import Chart from 'chart.js/auto';
 
-//The Chart and AutoRegression is designed by me, but made, corrected, and perfected by GPT. This is the only part of the tools where GPT is the "author" in a non-traditional sense.
-
 // Initialize chart data and configuration
 const ctx = document.getElementById('bar-chart').getContext('2d');
 const chartConfig = {
